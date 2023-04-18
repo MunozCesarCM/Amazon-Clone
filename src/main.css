@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.headerHover {
-  @apply px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100
+.header-hover {
+  @apply px-2 h-[80%] flex border border-transparent hover:border-white cursor-pointer duration-100
+}
+
+.search-container {
+  @apply h-full flex items-center justify-center duration-300 cursor-pointer
 }
