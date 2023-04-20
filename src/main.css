@@ -10,3 +10,7 @@
 .search-container {
   @apply h-full flex items-center justify-center duration-300 cursor-pointer
 }
+
+.footer-hover {
+  @apply flex gap-1 items-center justify-center border border-gray-500 cursor-pointer duration-200 px-2 py-1 hover:border-gray-400
+}

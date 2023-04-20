@@ -1,40 +1,40 @@
 export const navItems = [
   {
-    id: 300,
+    id: 100,
     title: 'Digital Content & Devices',
     children: [
-      { id: 400, title: 'Amazon Music' },
-      { id: 401, title: 'Kindle E-readers & Books' },
-      { id: 402, title: 'Amazon Appstore' },
+      { id: 200, title: 'Amazon Music' },
+      { id: 201, title: 'Kindle E-readers & Books' },
+      { id: 202, title: 'Amazon Appstore' },
     ],
   },
   {
-    id: 301,
+    id: 101,
     title: 'Shop By Department',
     children: [
-      { id: 403, title: 'Electronics' },
-      { id: 404, title: 'Computers' },
-      { id: 405, title: 'Smart Home' },
-      { id: 406, title: 'Arts & Crafts' },
+      { id: 203, title: 'Electronics' },
+      { id: 204, title: 'Computers' },
+      { id: 205, title: 'Smart Home' },
+      { id: 206, title: 'Arts & Crafts' },
     ],
   },
   {
-    id: 302,
+    id: 102,
     title: 'Programs & Features',
     children: [
-      { id: 403, title: 'Gift Cards' },
-      { id: 404, title: 'Shop By Interest' },
-      { id: 405, title: 'Amazon Live' },
-      { id: 406, title: 'International Shopping' },
+      { id: 203, title: 'Gift Cards' },
+      { id: 204, title: 'Shop By Interest' },
+      { id: 205, title: 'Amazon Live' },
+      { id: 206, title: 'International Shopping' },
     ],
   },
   {
-    id: 303,
+    id: 103,
     title: 'Help & Settings',
     children: [
-      { id: 407, title: 'Your Account' },
-      { id: 408, title: 'Customer Service' },
-      { id: 409, title: 'Sign In' },
+      { id: 207, title: 'Your Account' },
+      { id: 208, title: 'Customer Service' },
+      { id: 209, title: 'Sign In' },
     ],
   },
 ];
