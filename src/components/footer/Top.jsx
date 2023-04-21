@@ -4,7 +4,7 @@ const Top = () => {
       <div className='w-full border-t-[1px] border-b-[1px] py-8'>
         <div className='w-64 mx-auto text-center flex flex-col gap-1'>
           <p className='text-sm'>See personalized recommendations</p>
-          <button className='w-full bg-yellow-400 rounded-md py-1 font-semibold cursor-pointer'>
+          <button className='w-full bg-amazon_yellow rounded-md py-1 font-semibold cursor-pointer'>
             Sign In
           </button>
           <p className='text-xs mt-1'>

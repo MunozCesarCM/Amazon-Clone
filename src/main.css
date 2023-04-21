@@ -14,3 +14,7 @@
 .footer-hover {
   @apply flex gap-1 items-center justify-center border border-gray-500 cursor-pointer duration-200 px-2 py-1 hover:border-gray-400
 }
+
+.footer-item {
+  @apply w-24 text-[12px] group-hover:underline leading-3
+}

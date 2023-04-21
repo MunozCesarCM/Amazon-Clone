@@ -11,10 +11,10 @@ const Header = () => {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <header>
+    <header className='sticky top-0 z-30'>
       <div className='w-full bg-amazon_blue text-white px-4 py-3 pl-6 flex items-center gap-4'>
         <div className='header-hover'>
-          <img className='w-14' src={ logo } alt="logo" />
+          <img className='w-14' src={logo} alt="logo" />
         </div>
         <div className='header-hover items-center gap-1'>
           <PlaceOutlinedIcon />
@@ -61,7 +61,7 @@ const Header = () => {
         <div className='flex items-start justify-center relative header-hover'>
           <ShoppingCartOutlinedIcon />
           <p className='text-xs font-semibold mt-3 text-white'>
-            Cart <span className='absolute text-xs -top-1 left-6 font-semibold p-1 h-4 bg-[#F3A847] text-amazon_blue rounded-full flex justify-center items-center'>0</span>
+            Cart<span className='absolute text-xs -top-1 left-6 font-semibold p-1 h-4 bg-[#F3A847] text-amazon_blue rounded-full flex justify-center items-center'>0</span>
           </p>
         </div>
       </div>
