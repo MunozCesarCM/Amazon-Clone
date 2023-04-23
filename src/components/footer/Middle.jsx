@@ -4,11 +4,11 @@ import { logo } from '../../assets';
 const Middle = () => {
   return (
     <div className='w-full bg-amazon_light text-white'>
-      <div className='w-full border-b-[1px] border-gray-500 py-10'>
+      <div className='w-full border-b-[1px] border-gray-500 p-10'>
         <div className='max-w-5xl mx-auto text-gray-300'>
-          <div className='w-full grid grid-cols-4 place-items-center items-start'>
+          <div className='w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 md:place-items-center md:items-start gap-6'>
             {footerPrimary.map((item) => (
-              <div key={item.id} className='mx-2'>
+              <div key={item.id} className='w-full mx-2'>
                   <h3 className='font-title_font text-white text-base font-semibold mb-3'>
                     {item.title}
                   </h3>

@@ -18,3 +18,15 @@
 .footer-item {
   @apply w-24 text-[12px] group-hover:underline leading-3
 }
+
+.md-hidden {
+  @apply hidden md:inline-flex
+}
+
+.mdl-hidden {
+  @apply hidden mdl:inline-flex
+}
+
+.lgl-hidden {
+  @apply hidden lgl:inline-flex
+}

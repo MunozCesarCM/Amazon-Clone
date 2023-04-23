@@ -16,13 +16,13 @@ const Header = () => {
         <div className='header-hover'>
           <img className='w-14' src={logo} alt="logo" />
         </div>
-        <div className='header-hover items-center gap-1'>
+        <div className='header-hover items-center gap-1 mdl-hidden'>
           <PlaceOutlinedIcon />
           <p className='text-sm text-light_text font-light flex flex-col'>Deliver to
             <span className='text-sm text-white_text font-semibold -mt-1'> Home</span>
           </p>
         </div>
-        <div className='h-10 rounded-md flex flex-grow relative'>
+        <div className='h-10 rounded-md flex flex-grow relative lgl-hidden'>
           <span
             onClick={ () => setShowAll(!showAll) }
             className='search-container w-14 bg-gray-200 hover:bg-gray-300 border-2 duration-300 text-sm text-amazon_blue font-title_font rounded-tl-md rounded-bl-md'>
@@ -32,11 +32,11 @@ const Header = () => {
             showAll && (
               <div>
                 <ul className='absolute w-56 h-80 top-10 left-0 overflow-y-scroll overflow-x-hidden bg-white border-[1px] border-amazon_blue text-black p-2 flex-col gap-1 z-2'>
-                {
-                  categories.map((item) => (
-                    <li key={item.id} className='text-sm tracking-wide font-title_font border-b-[1px] border-b-transparent hover:border-b-amazon_blue cursor-pointer duration-200'>{ item.title }</li>
-                  ))
-                }
+                {categories.map((item) => (
+                  <li key={item.id} className='text-sm tracking-wide font-title_font border-b-[1px] border-b-transparent hover:border-b-amazon_blue cursor-pointer duration-200'>
+                    { item.title }
+                  </li>
+                ))}
                 </ul>
               </div>
             )
@@ -47,12 +47,12 @@ const Header = () => {
           </span>
         </div>
         <div className='flex flex-col items-start justify-center header-hover'>
-          <p className='text-xs text-light_text font-light'>Hello, sign in</p>
-          <p className='text-sm font-semibold -mt-1 text-white_text'>
+          <p className='text-sm mdl:text-xs text-white mdl:text-light_text font-light'>Hello, sign in</p>
+          <p className='text-sm font-semibold -mt-1 text-white_text mdl-hidden'>
             Accounts & Lists <span><ArrowDropDownIcon /></span>
           </p>
         </div>
-        <div className='flex flex-col items-start justify-center header-hover'>
+        <div className='flex flex-col items-start justify-center header-hover lgl-hidden'>
           <p className='text-xs text-light_text font-light'>Returns</p>
           <p className='text-sm font-semibold -mt-1 text-white_text'>
             & Orders

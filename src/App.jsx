@@ -8,7 +8,7 @@ const App = () => {
     <main className='font-body_font bg-[#E3E6E6]'>
       <Header />
       <Banner />
-      <div className='w-full -mt-72 mb-10 py-10'>
+      <div className='w-full -mt-20 md:-mt-32 xl:-mt-72 mb-10 py-10'>
         <Products />
       </div>
       <Footer />

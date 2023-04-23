@@ -7,9 +7,9 @@ const Products = () => {
   if (isLoading) return null;
 
   return (
-    <div className='max-w-screen-2xl mx-auto grid grid-cols-4 gap-10 px-4'>
+    <div className='max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 px-4'>
       {products.map((item) => (
-        <div key={item.id} className='bg-white h-auto py-8 duration-200 relative flex flex-col gap-4 px-4 relative shadow-lg'>
+        <div key={item.id} className='bg-white h-auto py-8 duration-200 relative flex flex-col gap-4 px-4 relative shadow'>
           <div className='w-full h-auto flex items-center justify-center'>
             <img
               className='w-52 h-64 object-contain'

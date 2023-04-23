@@ -24,7 +24,7 @@ const SideNav = ({ setSideNav }) => {
           initial={{x:-500, opacity:0}}
           animate={{x:0, opacity:1}}
           transition={{duration:.3}}
-          className='w-[350px] h-full bg-white'>
+          className='w-[80%] md:w-[350px] h-full bg-white'>
           <div className='w-full bg-amazon_light text-white py-2 px-6 flex items-center gap-4'>
             <AccountCircleIcon />
             <h3 className='font-title_font font-bold text-lg tracking-wide'>
@@ -45,7 +45,7 @@ const SideNav = ({ setSideNav }) => {
               </ul>
             </div>
           ))}
-          <span className='cursor-pointer absolute top-0 left-[360px] w-10 h-10 text-white flex items-center justify-center hover:text-zinc-200 duration-300'>
+          <span className='cursor-pointer absolute top-0 left-[82%] md:left-[360px] w-10 h-10 text-white flex items-center justify-center hover:text-zinc-200 duration-300'>
             <CloseIcon onClick={ () => setSideNav(false) } />
           </span>
         </motion.div>

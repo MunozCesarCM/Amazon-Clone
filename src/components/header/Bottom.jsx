@@ -13,11 +13,11 @@ const Bottom = () => {
           className='header-hover items-center gap-1'>
           <MenuIcon />All
         </li>
-        {
-          bottom.map((item) => (
-            <li key={ item.id } className='header-hover'>{ item.title }</li>
-          ))
-        }
+        {bottom.map((item) => (
+          <li key={ item.id } className='header-hover md-hidden'>
+            { item.title }
+          </li>
+        ))}
       </ul>
       { sideNav && <SideNav setSideNav={setSideNav} /> }
     </div>
