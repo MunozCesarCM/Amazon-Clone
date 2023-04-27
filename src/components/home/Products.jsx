@@ -1,7 +1,10 @@
+import { useDispatch } from 'react-redux';
 import { useProducts } from '../../hooks/useProducts';
+import { addToCart } from '../../redux/slice';
 import StarIcon from '@mui/icons-material/Star';
 
 const Products = () => {
+  const dispatch = useDispatch();
   const { products, isLoading } = useProducts();
 
   if (isLoading) return null;
@@ -42,7 +45,15 @@ const Products = () => {
               </span>
             </div>
           </div>
-          <button className='w-full font-title_font font-medium text-base bg-amazon_yellow hover:bg-yellow-400 hover:shadow duration-200 py-1.5 rounded-md mt-3'>
+          <button onClick={() => dispatch(addToCart({
+            id: item.id,
+            title: item.title,
+            description: item.description,
+            price: item.price,
+            category: item.category,
+            image: item.image,
+            quantity: 1,
+          }))} className='w-full font-title_font font-medium text-base bg-amazon_yellow hover:bg-yellow-400 hover:shadow duration-200 py-1.5 rounded-md mt-3'>
             Add to Cart
           </button>
         </div>
