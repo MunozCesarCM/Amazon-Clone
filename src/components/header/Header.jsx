@@ -17,7 +17,9 @@ const Header = () => {
     <header className='sticky top-0 z-30'>
       <div className='w-full bg-amazon_blue text-white px-4 py-3 pl-6 flex items-center gap-4'>
         <div className='header-hover'>
-          <img className='w-14' src={logo} alt="logo" />
+          <Link to='/'>
+            <img className='w-14' src={logo} alt="logo" />
+          </Link>
         </div>
         <div className='header-hover items-center gap-1 mdl-hidden'>
           <PlaceOutlinedIcon />
@@ -51,9 +53,7 @@ const Header = () => {
         <div className='flex flex-col items-start justify-center header-hover'>
           <p className='text-sm mdl:text-xs text-white mdl:text-light_text font-light'>Hello, sign in</p>
           <p className='text-sm font-semibold -mt-1 text-white_text mdl-hidden'>
-            <Link to='account'>
-              Accounts & Lists <span><ArrowDropDownIcon /></span>
-            </Link>
+            Accounts & Lists <span><ArrowDropDownIcon /></span>
           </p>
         </div>
         <div className='flex flex-col items-start justify-center header-hover lgl-hidden'>
@@ -62,15 +62,17 @@ const Header = () => {
             & Orders
           </p>
         </div>
-        <div className='flex items-start justify-center relative header-hover'>
-          <ShoppingCartOutlinedIcon />
-          <p className='text-xs font-semibold mt-3 text-white'>
-            Cart
-            <span className='absolute text-xs -top-1 left-6 font-semibold p-1 h-4 bg-[#F3A847] text-amazon_blue rounded-full flex justify-center items-center'>
-              {products.length}
-            </span>
-          </p>
-        </div>
+        <Link to='/cart'>
+          <div className='flex items-start justify-center relative header-hover'>
+              <ShoppingCartOutlinedIcon />
+              <p className='text-xs font-semibold mt-3 text-white'>
+                Cart
+                <span className='absolute text-xs -top-1 left-6 font-semibold p-1 h-4 bg-[#F3A847] text-amazon_blue rounded-full flex justify-center items-center'>
+                  {products.length}
+                </span>
+              </p>
+          </div>
+        </Link>
       </div>
       <Bottom />
     </header>
