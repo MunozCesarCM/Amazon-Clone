@@ -1,5 +1,7 @@
 # Awesome Amazon Clone 🚀
 
+## [View Site ↗️](https://amazon-munozcesar.netlify.app/)
+
 Welcome to the Awesome Amazon Clone project! This ReactJS application aims to showcase my styling abilities while replicating the functionalities of the original Amazon website. Get ready to explore a sleek, modern design crafted with TailWindCSS, optimized for scalability and delivering an outstanding user experience.
 
 ## Project Structure
