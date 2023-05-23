@@ -1,11 +1,23 @@
-import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { uppercaseWords, formatMoney } from '../utils/string';
+import { deleteItem, incrementQuantity, decrementQuantity } from '../redux/slice';
 
 const Cart = () => {
+  const dispatch = useDispatch();
   const products = useSelector((state) => state.reducer.products);
+  const [totalPrice, setTotalPrice] = useState('');
+
+  useEffect(() => {
+    let total = 0;
+    products.map((item) => {
+      total += item.price * item.quantity;
+      return setTotalPrice(total);
+    });
+  }, [products]);
 
   return (
     <main className='font-body_font bg-gray-100'>
@@ -31,11 +43,17 @@ const Cart = () => {
                       <p className='pr-10 text-xs'>{item.description}</p>
                       <div className='bg-gray-100 flex justify-center items-center gap-1 w-24 py-1 text-center drop-shadow rounded-md'>
                         <p>Qty:</p>
-                        <p className='cursor-pointer bg-gray-200 px-1 rounded-md hover:bg-gray-400 duration-300'>-</p>
+                        <p
+                          onClick={() => dispatch(decrementQuantity(item.id))}
+                          className='cursor-pointer bg-gray-200 px-1 rounded-md hover:bg-gray-400 duration-300'>-</p>
                         <p>{item.quantity}</p>
-                        <p className='cursor-pointer bg-gray-200 px-1 rounded-md hover:bg-gray-400 duration-300'>+</p>
+                        <p
+                          onClick={() => dispatch(incrementQuantity(item.id))}
+                          className='cursor-pointer bg-gray-200 px-1 rounded-md hover:bg-gray-400 duration-300'>+</p>
                       </div>
-                      <button className='flex justify-center bg-red-500 w-36 py-1 rounded-lg text-white mt-2 hover:bg-red-700 active:bg-red-900 duration-300'>
+                      <button
+                        onClick={() => dispatch(deleteItem(item.id))}
+                        className='flex justify-center bg-red-500 w-36 py-1 rounded-lg text-white mt-2 hover:bg-red-700 active:bg-red-900 duration-300'>
                         Delete Item
                       </button>
                     </div>
@@ -55,7 +73,7 @@ const Cart = () => {
               </p>
             </div>
             <p className='font-semibold px-10 py-1 flex items-center justify-between'>
-              Total:<span className='text-lg font-bold ml-2'>$50.00</span>
+              Total:<span className='text-lg font-bold ml-2'>{formatMoney(totalPrice)}</span>
             </p>
             <label className='text-xs flex'><input type='checkbox' className='mr-1' />This order contains a gift</label>
           <button className='w-full font-title_font font-medium text-base bg-gradient-to-tr from-yellow-400 to-yellow-200 border hover:from-yellow-300 hover:to-yellow-400 border-yellow-500 active:bg-gradient-to-bl active:from-yellow-400 active:to-yellow-500 duration-200 py-1.5 rounded-md mt-3'>
