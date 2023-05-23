@@ -8,15 +8,13 @@ import { deleteItem, incrementQuantity, decrementQuantity } from '../redux/slice
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.reducer.products);
+  const products = useSelector((state) => state.amazon.products);
   const [totalPrice, setTotalPrice] = useState('');
 
   useEffect(() => {
-    let total = 0;
-    products.map((item) => {
-      total += item.price * item.quantity;
-      return setTotalPrice(total);
-    });
+    const total = products.reduce((acc, item) =>
+      acc + item.price * item.quantity, 0);
+    setTotalPrice(total);
   }, [products]);
 
   return (
@@ -76,9 +74,9 @@ const Cart = () => {
               Total:<span className='text-lg font-bold ml-2'>{formatMoney(totalPrice)}</span>
             </p>
             <label className='text-xs flex'><input type='checkbox' className='mr-1' />This order contains a gift</label>
-          <button className='w-full font-title_font font-medium text-base bg-gradient-to-tr from-yellow-400 to-yellow-200 border hover:from-yellow-300 hover:to-yellow-400 border-yellow-500 active:bg-gradient-to-bl active:from-yellow-400 active:to-yellow-500 duration-200 py-1.5 rounded-md mt-3'>
-            Proceed to Pay
-          </button>
+            <button className='w-full font-title_font font-medium text-base bg-gradient-to-tr from-yellow-400 to-yellow-200 border hover:from-yellow-300 hover:to-yellow-400 border-yellow-500 active:bg-gradient-to-bl active:from-yellow-400 active:to-yellow-500 duration-200 py-1.5 rounded-md mt-3'>
+              Proceed to Pay
+            </button>
           </div>
         </div>
       </div>

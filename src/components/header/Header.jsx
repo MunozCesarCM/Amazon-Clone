@@ -11,7 +11,7 @@ import { logo } from '../../assets/index';
 
 const Header = () => {
   const [showAll, setShowAll] = useState(false);
-  const products = useSelector((state) => state.reducer.products);
+  const products = useSelector((state) => state.amazon.products);
 
   return (
     <header className='sticky top-0 z-30'>
