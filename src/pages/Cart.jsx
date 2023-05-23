@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { uppercaseWords, formatMoney } from '../utils/string';
 
 const Cart = () => {
@@ -26,13 +27,17 @@ const Cart = () => {
                     <div className='flex flex-col gap-2'>
                       <h2 className='text-lg'>{item.title}</h2>
                       <p className='font-semibold pr-10 text-sm'>{uppercaseWords(item.category)}</p>
+                      <p className='text-[#007185] pr-10 text-xs'>Available</p>
                       <p className='pr-10 text-xs'>{item.description}</p>
                       <div className='bg-gray-100 flex justify-center items-center gap-1 w-24 py-1 text-center drop-shadow rounded-md'>
                         <p>Qty:</p>
-                        <p>-</p>
+                        <p className='cursor-pointer bg-gray-200 px-1 rounded-md hover:bg-gray-400 duration-300'>-</p>
                         <p>{item.quantity}</p>
-                        <p>+</p>
+                        <p className='cursor-pointer bg-gray-200 px-1 rounded-md hover:bg-gray-400 duration-300'>+</p>
                       </div>
+                      <button className='flex justify-center bg-red-500 w-36 py-1 rounded-lg text-white mt-2 hover:bg-red-700 active:bg-red-900 duration-300'>
+                        Delete Item
+                      </button>
                     </div>
                     <span className='font-semibold'>{formatMoney(item.price)}</span>
                   </div>
@@ -40,7 +45,23 @@ const Cart = () => {
               ))}
             </div>
           </div>
-          <div className='w-full h-full bg-white col-span-1'></div>
+          <div className='w-full h-52 bg-white col-span-1 flex flex-col justify-center items-center p-4'>
+            <div>
+              <p className='flex gap-2 items-start text-sm'>
+                <span>
+                  <CheckCircleIcon className='bg-white text-green-500 rounded-full' />
+                </span>
+                Your order qualifies for FREE shipping. Choose this option at checkout. See details . . . .
+              </p>
+            </div>
+            <p className='font-semibold px-10 py-1 flex items-center justify-between'>
+              Total:<span className='text-lg font-bold ml-2'>$50.00</span>
+            </p>
+            <label className='text-xs flex'><input type='checkbox' className='mr-1' />This order contains a gift</label>
+          <button className='w-full font-title_font font-medium text-base bg-gradient-to-tr from-yellow-400 to-yellow-200 border hover:from-yellow-300 hover:to-yellow-400 border-yellow-500 active:bg-gradient-to-bl active:from-yellow-400 active:to-yellow-500 duration-200 py-1.5 rounded-md mt-3'>
+            Proceed to Pay
+          </button>
+          </div>
         </div>
       </div>
       <Footer />
