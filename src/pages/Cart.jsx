@@ -6,6 +6,7 @@ import Footer from '../components/footer/Footer';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { uppercaseWords, formatMoney } from '../utils/string';
 import { deleteItem, incrementQuantity, decrementQuantity } from '../redux/slice';
+import { empty_cart } from '../assets';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -66,7 +67,7 @@ const Cart = () => {
               </>
             ) : (
                 <section className='flex p-8'>
-                  <img src='/emptyCart.svg' className='h-44' />
+                  <img src={empty_cart} className='h-44' />
                   <div className='ml-8 mt-3'>
                     <strong>Your Amazon Cart is empty</strong>
                     <Link to='/'>

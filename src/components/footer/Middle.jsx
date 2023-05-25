@@ -1,5 +1,5 @@
 import { footerPrimary } from '../../constants/footer';
-import { logo } from '../../assets';
+import { logo_light_text } from '../../assets';
 
 const Middle = () => {
   return (
@@ -29,7 +29,7 @@ const Middle = () => {
       </div>
       <div className='w-full flex gap-6 items-center justify-center py-6'>
         <div>
-          <img className='w-20 pt-3' src={logo} alt='logo' />
+          <img className='w-20 pt-3' src={logo_light_text} alt='logo' />
         </div>
         <div className='flex gap-2'>
           <p className='footer-hover'>
